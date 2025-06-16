@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GroceMate - Grocery List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <h1 class="logo">GroceMate</h1>
+    <div class="nav-actions">
+      <button id="export-pdf" class="nav-btn">📄 Export PDF</button>
+      <button id="theme-toggle" class="nav-btn">🌙</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left-container">
+      <div class="intro">
+        <h1>🛒 Plan Smart. Shop Smarter.</h1>
+        <p>Organize your grocery shopping with ease. Just type, add, and download your checklist with one click.</p>
+      </div>
+      <div class="input-form">
+        <input type="text" id="grocery-input" placeholder="Enter item name..." />
+        <button id="add-button">Add</button>
+        <button id="clear-button">Clear All</button>
+      </div>
+    </div>
+
+    <div class="right-container" id="pdf-content">
+      <h2>Your Grocery List</h2>
+      <ul id="grocery-list"></ul>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

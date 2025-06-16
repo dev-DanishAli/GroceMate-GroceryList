@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f0f6f6;
+  color: #222;
+  padding: 2rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #0e1e25;
+  color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 174, 149, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00ae95;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #00ae95;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #009b83;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 1rem;
+}
+
+.left-container,
+.right-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  margin-top: 3rem;
+  transition: background 0.3s ease;
+}
+
+.left-container {
+  background: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.right-container {
+  background-color: rgba(0, 174, 149, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+.intro h1 {
+  font-size: 2.6rem;
+  color: #00ae95;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+
+.input-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+#grocery-input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid #00ae95;
+  font-size: 1rem;
+  background-color: white;
+  color: #222;
+}
+
+body.dark-mode #grocery-input {
+  background-color: #1e2e36;
+  color: #fff;
+  border-color: #00cec9;
+}
+
+#add-button,
+#clear-button {
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+#add-button {
+  background-color: #00ae95;
+  color: white;
+}
+
+#add-button:hover {
+  background-color: #009b83;
+}
+
+#clear-button {
+  background-color: #ff5e57;
+  color: white;
+}
+
+#clear-button:hover {
+  background-color: #e74c3c;
+}
+
+
+.right-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00ae95;
+}
+
+#grocery-list {
+  list-style: none;
+}
+
+#grocery-list li {
+  background: #ffffffaa;
+  margin-bottom: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+body.dark-mode #grocery-list li {
+  background: #1f2e35;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #ff4757;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  /* Main container layout */
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  /* Navbar full width and clean look */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Left and right containers equal width & padding */
+  .left-container,
+  .right-container {
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem 1.2rem;
+    box-sizing: border-box;
+  }
+
+  /* Intro section text */
+  .intro h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* Input form alignment */
+  .input-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  #grocery-input,
+  #add-button,
+  #clear-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  /* Grocery list styling on mobile */
+  .right-container h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
